@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  {% for i in result.recipes %}
+<h3>{{i.title}}</h3>
+<img src="{{i.image}}">
+<br>
+<p>{{i.summary|striptags}}</p>
+<br>
+<p>{{i.instructions|striptags}}</p>
+{% endfor %}
+<h2> A food joke</h2>
+<h2>{{response.text}} </h2>
+<a href="javascript:void(0);" onclick="window.location.href='https://spoonacular.com/food-api/docs#Get-Random-Recipes'"><button>go there</button></a>
+</body>
+</html>

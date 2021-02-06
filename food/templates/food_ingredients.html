@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% block title %}Steps{% endblock %}
+{% block content %}
+
+<section class="chocolate_section ">
+      <div class="container">
+        <div style="font-size: 18px;" class="heading_container">
+          <h2 style="font-size: 50px;" >
+            Ingredients Needed For the Dish
+          </h2>
+          <br>
+          <p>
+            Try out ,enjoy and share to us on our social media
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="chocolate_container">
+           {% for i in response.ingredients %}
+          <div class="box">
+            <div class="img-box">
+              <img src="https://spoonacular.com/cdn/ingredients_250x250/{{i.image}}">
+            </div>
+            <div class="detail-box">
+              <h4>
+                {{i.name|capfirst}}({{i.amount.metric.value}}{{i.amount.metric.unit}})
+              </h4>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+</section>
+
+ <br>
+<br>
+<br>
+<br>
+<section style="background-color: white;" class="offer_section layout_padding">
+      <div class="container">
+        <div class="box">
+          <div style="font-size: 68px;" class="detail-box">
+            <h2 style="font-size: 78px;" >
+              Steps
+            </h2>
+            <ul>
+    {% for i in data.analyzedInstructions %}
+    {% for l in i.steps %}
+    <li style="font-size: 20px; margin-bottom: 40px;" >{{l.step|capfirst}}
+    {% endfor %}
+    {% endfor %}
+    </ul>
+          </div>
+        </div>
+    </div>
+    </section>
+
+<br>
+<br>
+<br>
+<br>
+    {% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block title %}Itadakimasu{% endblock %}
+{% block content %}
+{% for i in data.recipes %}
+<div class="card mb-3" style="min-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <div class="img-box">
+       <img style="height:50%; width:100%;" src="{{i.image}}">
+       </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="{% url 'food_ingredients' i.id %}"><h1 class="card-title"><b>{{ i.title }}</b></h1></a>
+        <p style="font-size:10px; " class="card-text">{{i.summary|striptags}}</p>
+        <p class="card-text"><a style="font-size:12px;" href="{% url 'food_equipments' i.id %}">Equipments needed</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+ {% endfor %}
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+ 
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}Itadakimasu{% endblock %}
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form accept-charset="UTF-8" method="get">
+                <div class="input-group">
+                    <input style="height:50px;" type="text" name = "title" id="search" placeholder="Search for recipes..eg pasta, rice" class="form-control">
+                    <span class="input-group-btn">
+                        <input style="height:50px; width:90px;" type="submit" value="Search" class="btn btn-primary" data-disable-with="Search">
+                     </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% for i in response.results %}
+<div class="card mb-3" style="min-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+       <img src="{{i.image}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="{% url 'food_ingredients' i.id %}"><h1 class="card-title"><b>{{ i.title }}</b></h1></a>
+        <p style="font-size:15px; " class="card-text">{{i.summary|striptags}}</p>
+        <p class="card-text"><a style="font-size:12px;" href="{% url 'food_equipments' i.id %}">Equipments needed</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+ {% endfor %}
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ 
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for i in data.videos %} 
+  <div class="col">
+    
+    <div class="card">
+      <iframe width="auto" height="auto" src="https://www.youtube.com/embed/{{i.youTubeId}}?controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+      </div>
+    </div>
+  </div>
+   {% endfor %} 
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+ 
+{% endblock %}
+
+	{% for i in response.results %}
+    <a href="{% url 'food_ingredients' i.id %}"><h1>{{ i.title }}</h1>
+    </a><a href="{% url 'food_equipments' i.id %}">Equipments needed</a>
+    <img src="{{i.image}}">
+
+<p>{{i.summary|striptags}}</p>
+<br>
+<h5>Facts</h5>
+<ul>
+    <li>vegan={{i.vegan}}</li>
+    <li>Time to complete={{i.readyInMinutes}}</li>
+    <li>vegetarian={{i.vegetarian}}</li>
+    <li>gluten={{i.glutenFree}}</li>
+    <li>healthScore={{i.healthScore}}</li>
+    <li>cuisines={{i.cuisines}}</li>
+    <li>when to eat={{i.dishTypes}}</li>
+</ul>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+{% for i in data.videos %} 
+{{i.title}}
+<iframe width="300" height="200" src="https://www.youtube.com/embed/{{i.youTubeId}}?controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+{% endfor %}  
+
+</body>
+</html>
