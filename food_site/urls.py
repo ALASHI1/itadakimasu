@@ -29,6 +29,7 @@ urlpatterns = [
     path('food/hero1/',views.hero1,name='hero1'),
     path('food/hero2/',views.hero2,name='hero2'),
     path('food/hero3/',views.hero3,name='hero3'),
+    path('food/trial/',views.trial,name='trial'),
 
 
 ]

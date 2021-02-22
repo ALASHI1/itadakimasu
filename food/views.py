@@ -2,6 +2,7 @@ from django.shortcuts import render,get_object_or_404
 import requests 
 from food.models import Food
 from django.conf import settings as conf_settings
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -90,6 +91,16 @@ def hero3(request):
 	return render(request,'hero.html',{'data':data,'apiKey':API_KEY})
 
 
+
+
+def trial(request):
+	API_ENDPOINT = 'https://api.spoonacular.com/users/connect?apiKey=640b389c08f94f7eaebca76a78add0bf'
+	API_KEY = '640b389c08f94f7eaebca76a78add0bf'
+	data = {"username": "bensh1","firstName": "ben2","lastName": "shi1",} 
+	r = requests.post(API_ENDPOINT,json=data)
+	pastebin_url = r.text
+	return HttpResponse(pastebin_url,content_type='text/plain')
+
 # GET https://api.spoonacular.com/recipes/{id}/ingredientWidget.json&apiKey={API_KEY}
 # GET https://api.spoonacular.com/recipes/complexSearch
 # https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=API-KEY
@@ -97,7 +108,6 @@ def hero3(request):
 # GET https://api.spoonacular.com/recipes/complexSearch
 # https://api.spoonacular.com/recipes/id/analyzedInstructions/complexSearch?stepBreakdown=true&id=654959&apiKey={API_KEY}
 # https://api.spoonacular.com/recipes/654959/analyzedInstructions?apiKey={API_KEY}
-
 
 
 

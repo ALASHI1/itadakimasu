@@ -116,6 +116,7 @@ a:focus {
   color: #000000;
   text-align: center;
   text-transform: uppercase;
+  
 }
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link {
@@ -304,7 +305,7 @@ a:focus {
 }
 
 .slider_section .detail_box h1 span {
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 .slider_section .detail_box a {
