@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import dotenv
+
 import dj_database_url
 import environ
 env = environ.Env(DEBUG=(bool, False),)
