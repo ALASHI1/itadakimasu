@@ -27,8 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
-APIKEY = env('API_KEY')
-
+APIKEYS = [env('API_KEY1'),env('API_KEY2'),env('API_KEY3'),env('API_KEY4'),env('API_KEY5'),env('API_KEY6')]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.environ['MODE'] == 'dev' else False
@@ -138,6 +137,9 @@ STATICFILES_DIRS = [
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+
+
 
 
 
