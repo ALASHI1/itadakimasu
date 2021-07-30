@@ -22,8 +22,6 @@ def home(request):
 	route = f'https://api.spoonacular.com/recipes/random?number=100&apiKey='
 	response = make_requests(url)
 	result = make_requests(route)
-	print (response)
-	print (result)
 	return render(request,'index.html',{'result':result,'response':response})
 
 
