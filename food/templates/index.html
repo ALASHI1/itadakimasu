@@ -1,410 +1,467 @@
 <!DOCTYPE html>
 <html>
-{% load static %}
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  {% load static %}
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" href="{% static 'images/logo2.png' %}">
-  
-  <title>{% block title %}Itadakimasu{% endblock %}</title>
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
+    <link rel="icon" href="{% static 'images/logo2.png' %}" />
 
-<!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
-  <!--slick slider stylesheet -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+    <title>{% block title %}Itadakimasu{% endblock %}</title>
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
-  <!-- slick slider -->
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!--slick slider stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css"
+    />
 
-  <link rel="stylesheet" href="{% static 'css/slick-theme.css'%}" />
-  <!-- font awesome style -->
-  <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="{% static '/css/style.css' %}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{% static 'css/responsive.css'%} " rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<link  href="/cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- slick slider -->
 
-<link  href="/bower_components/bootstrap-horizon/bootstrap-horizon.css">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css'%}" />
+    <!-- font awesome style -->
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css'%} " rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      href="/cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css"
+    />
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="/bower_components/bootstrap-horizon/bootstrap-horizon.css" />
 
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-  <div class="main_body_content">
-
-    <div class="hero_area">
-      <!-- header section strats -->
-      <header class="header_section">
-        <div class="container-fluid">
-          
-          <nav style="font-size: 15px;"  class="navbar navbar-expand-lg custom_nav-container ">
-            <a style="font-size: 38px;" class="navbar-brand" href="{% url 'home' %}">
-              Itadakimasu
-            </a>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'food' %}"> Food Recipies</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'wine' %}">Wines</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'about' %}"> About</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        
-        </div>
-      </header>
-      <!-- end header section -->
-{% block content %}
-
-       <!-- slider section -->
-      <section class="slider_section ">
-        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div style="color: #6b6b6b; font-size: 30px;" class="detail_box">
-                      <h1 style="font-size: 30px;" >
-                        Healty Foods? <br>
-                        <span>
-                          Try our veggy recipies
-                        </span>
-                      </h1>
-                      <a href="{% url 'hero'%}">
-                       <span style="color: #6b6b6b; font-size: 28px; ">
-                          Read More
-                        </span>
-                        <img style="color: #6b6b6b;"  src="{%  static 'images/white-arrow.png'%}" alt="">
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 ml-auto">
-                    <div class="img-box">
-                      <img style="height: 250px; width: 200;" src="{% static 'images/veggy1.jpeg'%}" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item ">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div style="color: #6b6b6b; font-size: 30px;"  class="detail_box">
-                      <h1 style="font-size: 30px;">
-                        Healty Foods? <br>
-                        <span>
-                          Try Glutten free foods
-                        </span>
-                      </h1>
-                      <a href="{% url 'hero1'%}">
-                        <span style="color: #6b6b6b; font-size: 28px; ">
-                          Read More
-                        </span>
-                        <img style="color: #6b6b6b;"  src="{% static 'images/white-arrow.png' %}" alt="">
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 ml-auto">
-                    <div class="img-box">
-                      <img style="height: 250px; width: 200;"  src=" {% static 'images/glutten.jpg' %}" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item ">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div style="color: #6b6b6b; font-size: 30px;"  class="detail_box">
-                      <h1 style="font-size: 30px;">
-                        Healty Foods? <br>
-                        <span>
-                          Try our vegan recipies
-                        </span>
-                      </h1>
-                      <a href="{% url 'hero2'%}">
-                        <span style="color: #6b6b6b; font-size: 28px; ">
-                          Read More
-                        </span>
-                        <img style="color: #6b6b6b;"   src="{%static 'images/white-arrow.png' %}" alt="">
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 ml-auto">
-                    <div class="img-box">
-                      <img style="height: 250px; width: 200;" src=" {% static  'images/vegan.jpg'%} " alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </section>
-      <!-- end slider section -->
-    </div>
-
-   
-
-    <!-- chocolate section -->
-
-    <section class="chocolate_section ">
-      <div class="container">
-        <div style="font-size: 18px;" class="heading_container">
-          <h2 style="font-size: 50px;" >
-            Our Random list
-          </h2>
-          <br>
-          <p>
-            Try out any of our random recipes ,enjoy and share to us on our social media
-          </p>
-          <br>
-          <h1>while you chose here's a random joke for you...</h1>
-          <p><h2 style="font-size:38px;">{{response.text}}</h2></p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="chocolate_container">
-           {% for i in result.recipes %}
-           <a href="{% url 'food_ingredients' i.id %}">
-          <div class="box">
-            <div class="img-box">
-              <img src="{{i.image}}" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                {{i.title}}
-              </h4>
-            </div>
-          </div></a>
-          {% endfor %}
-        </div>
-      </div>
-          
-    </section>
-
-    <!-- end chocolate section -->
-
-    <!-- offer section -->
-<section class="offer_section layout_padding">
-      <div class="container">
-        <div class="box">
-          <div style="font-size: 68px;" class="detail-box">
-            <h2>
-              In the mood for sweets?
-            </h2>
-            <h3 style="font-size: 38px;">
-              Browse through <br>
-              any of our dessert Recipes
-            </h3>
-          </div>
-          <div class="img-box">
-            <img src="{% static 'images/offer-img.png' %}" alt="">
-          </div>
-        </div>
-        <div class="btn-box">
-          <a href="{% url 'hero3' %}">
-            <span>
-              See More
-            </span>
-            <img src="{% static 'images/color-arrow.png'%}" alt="">
-          </a>
-        </div>
-      </div>
-    </section>
-<!-- Itadakimasuu -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5572126897722470"
-     data-ad-slot="1594227354"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-    <!-- end offer section --> 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5572126897722470"
-     crossorigin="anonymous"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<script type="text/javascript" src="https://s.skimresources.com/js/196032X1673791.skimlinks.js"></script>
-{% endblock %}
-    <!-- info section -->
-    <section class="info_section layout_padding2">
-      <div class="container">
-        <div class="row info_form_social_row">
-          <div class="col-md-8 col-lg-9">
-            <div class="info_form">
-              <form>
-                <input style="color: #000000;" type = "text" placeholder="Enter your email">
-                <button>
-                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    <body>
+      <div class="main_body_content">
+        <div class="hero_area">
+          <!-- header section strats -->
+          <header class="header_section">
+            <div class="container-fluid">
+              <nav
+                style="font-size: 15px"
+                class="navbar navbar-expand-lg custom_nav-container"
+              >
+                <a
+                  style="font-size: 38px"
+                  class="navbar-brand"
+                  href="{% url 'home' %}"
+                >
+                  Itadakimasu
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class=""> </span>
                 </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-3">
 
-            <div class="social_box">
-              <a href="https://web.facebook.com/iItadakimasuu/">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'home' %}"
+                        >Home <span class="sr-only">(current)</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'food' %}">
+                        Food Recipies</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'wine' %}">Wines</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'about' %}"> About</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </header>
+          <!-- end header section -->
+          {% block content %}
+          <!-- slider section -->
+          <section class="slider_section">
+            <div
+              id="customCarousel1"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div
+                          style="color: #000000; font-size: 30px"
+                          class="detail_box"
+                        >
+                          <h1 style="font-size: 30px">
+                            Healty Foods? <br />
+                            <span> Try our veggy recipies </span>
+                          </h1>
+                          <a href="{% url 'hero'%}">
+                            <span style="color: #000000; font-size: 28px">
+                              Read More
+                            </span>
+                            <img
+                              style="color: #000000"
+                              src="{%  static 'images/white-arrow.png'%}"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-4 ml-auto">
+                        <div class="img-box">
+                          <img
+                            style="height: 250px; width: 200"
+                            src="{% static 'images/veggy1.jpeg'%}"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div
+                          style="color: #000000; font-size: 30px"
+                          class="detail_box"
+                        >
+                          <h1 style="font-size: 30px">
+                            Healty Foods? <br />
+                            <span> Try Glutten free foods </span>
+                          </h1>
+                          <a href="{% url 'hero1'%}">
+                            <span style="color: #000000; font-size: 28px">
+                              Read More
+                            </span>
+                            <img
+                              style="color: #000000"
+                              src="{% static 'images/white-arrow.png' %}"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-4 ml-auto">
+                        <div class="img-box">
+                          <img
+                            style="height: 250px; width: 200"
+                            src=" {% static 'images/glutten.jpg' %}"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div
+                          style="color: #000000; font-size: 30px"
+                          class="detail_box"
+                        >
+                          <h1 style="font-size: 30px">
+                            Healty Foods? <br />
+                            <span> Try our vegan recipies </span>
+                          </h1>
+                          <a href="{% url 'hero2'%}">
+                            <span style="color: #000000; font-size: 28px">
+                              Read More
+                            </span>
+                            <img
+                              style="color: #000000"
+                              src="{%static 'images/white-arrow.png' %}"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-4 ml-auto">
+                        <div class="img-box">
+                          <img
+                            style="height: 250px; width: 200"
+                            src=" {% static  'images/vegan.jpg'%} "
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel_btn-box">
+              <a
+                class="carousel-control-prev"
+                href="#customCarousel1"
+                role="button"
+                data-slide="prev"
+              >
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
               </a>
-              <a href="https://twitter.com/Itadaki30674404">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+              <a
+                class="carousel-control-next"
+                href="#customCarousel1"
+                role="button"
+                data-slide="next"
+              >
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
               </a>
             </div>
-          </div>
+          </section>
+          <!-- end slider section -->
         </div>
-        <div class="row info_main_row">
-          <div class="col-md-6 col-lg-3">
-            <div style="font-size: 18px;" class="info_links">
-              <h4>
-                Menu
-              </h4>
-              <div class="info_links_menu">
-                <a href="index.html">
-                  Home
-                </a>
-                <a href="about.html">
-                  About
-                </a>
-                <a href="contact.html">
-                  Contact us
-                </a>
-              </div>
-            </div>
-          </div>
-          <div style="font-size: 18px;" class="col-md-6 col-lg-3">
-            <div class="info_insta">
-              <h4>
-                Fave comments
-              </h4>
-              <div class="insta_box">
-                <div class="img-box">
-                  <img src="{% static 'images/insta-img.png' %}" alt="">
-                </div>
-                <p>
-                  I use it everyday
-                </p>
-              </div>
-              <div class="insta_box">
-                <div class="img-box">
-                  <img src="{% static 'images/insta-img.png' %}" alt="">
-                </div>
-                <p>
-                  can't cook without it
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div style="font-size: 18px;" class="info_detail">
-              <h4>
-                Company
-              </h4>
-              <p class="mb-0">
-                Itadakimasu is a platform that gives you acccess to all the food recipes available in the world and provides you with detailed instructions on how to prepare them  
+
+        <!-- chocolate section -->
+
+        <section class="chocolate_section">
+          <div class="container">
+            <div style="font-size: 18px" class="heading_container">
+              <h2 style="font-size: 50px">Our Random list</h2>
+              <br />
+              <p>
+                Try out any of our random recipes ,enjoy and share to us on our
+                social media
               </p>
+              <br />
+              <h1>while you chose here's a random joke for you...</h1>
+              <p>{{response.text}}</p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3">
-            <h4>
-              Contact Us
-            </h4>
-            <div style="font-size: 18px;" class="info_contact">
-              
-          
-              
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +234 7050948905
-                </span>
-              
-              <br>
-              <br>
-                <i class="fa fa-envelope"></i>
-                <span>
-                  Itadakimasu@gmail.com
-                </span>
-              
+          <div class="container">
+            <div class="chocolate_container">
+              {% for i in result.recipes %}
+              <a href="{% url 'food_ingredients' i.id %}">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{i.image}}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h4>{{i.title}}</h4>
+                  </div>
+                </div></a
+              >
+              {% endfor %}
             </div>
           </div>
-        </div>
+        </section>
+
+        <!-- end chocolate section -->
+
+        <!-- offer section -->
+        <section class="offer_section layout_padding">
+          <div class="container">
+            <div class="box">
+              <div style="font-size: 68px" class="detail-box">
+                <h2>In the mood for sweets?</h2>
+                <h3 style="font-size: 38px">
+                  Browse through <br />
+                  any of our dessert Recipes
+                </h3>
+              </div>
+              <div class="img-box">
+                <img src="{% static 'images/offer-img.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="btn-box">
+              <a href="{% url 'hero3' %}">
+                <span> See More </span>
+                <img src="{% static 'images/color-arrow.png'%}" alt="" />
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- Itadakimasuu -->
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-5572126897722470"
+          data-ad-slot="1594227354"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <!-- end offer section -->
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5572126897722470"
+          crossorigin="anonymous"
+        ></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <script
+          type="text/javascript"
+          src="https://s.skimresources.com/js/196032X1673791.skimlinks.js"
+        ></script>
+        {% endblock %}
+        <!-- info section -->
+        <section class="info_section layout_padding2">
+          <div class="container">
+            <div class="row info_form_social_row">
+              <div class="col-md-8 col-lg-9">
+                <div class="info_form">
+                  <form>
+                    <input
+                      style="color: #000000"
+                      type="text"
+                      placeholder="Enter your email"
+                    />
+                    <button>
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <div class="social_box">
+                  <a href="https://web.facebook.com/iItadakimasuu/">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://twitter.com/Itadaki30674404">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row info_main_row">
+              <div class="col-md-6 col-lg-3">
+                <div style="font-size: 18px" class="info_links">
+                  <h4>Menu</h4>
+                  <div class="info_links_menu">
+                    <a href="index.html"> Home </a>
+                    <a href="about.html"> About </a>
+                    <a href="contact.html"> Contact us </a>
+                  </div>
+                </div>
+              </div>
+              <div style="font-size: 18px" class="col-md-6 col-lg-3">
+                <div class="info_insta">
+                  <h4>Fave comments</h4>
+                  <div class="insta_box">
+                    <div class="img-box">
+                      <img src="{% static 'images/insta-img.png' %}" alt="" />
+                    </div>
+                    <p>I use it everyday</p>
+                  </div>
+                  <div class="insta_box">
+                    <div class="img-box">
+                      <img src="{% static 'images/insta-img.png' %}" alt="" />
+                    </div>
+                    <p>can't cook without it</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div style="font-size: 18px" class="info_detail">
+                  <h4>Company</h4>
+                  <p class="mb-0">
+                    Itadakimasu is a platform that gives you acccess to all the
+                    food recipes available in the world and provides you with
+                    detailed instructions on how to prepare them
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h4>Contact Us</h4>
+                <div style="font-size: 18px" class="info_contact">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span> Call +234 7050948905 </span>
+
+                  <br />
+                  <br />
+                  <i class="fa fa-envelope"></i>
+                  <span> Itadakimasu@gmail.com </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+      <!-- end info_section -->
+      <!-- Itadakimasuu -->
+      <!-- footer section -->
 
-    <!-- end info_section -->
-<!-- Itadakimasuu -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5572126897722470"
-     data-ad-slot="1594227354"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-  </div>
+      <p style="position: 0%; visibility: hidden">
+        &copy; <span id="displayYear"></span>
+      </p>
 
-  <!-- footer section -->
+      <!-- footer section -->
 
-        <p style="position:50%;">
-          &copy; <span id="displayYear"></span>
-        </p>
-      
-  <!-- footer section -->
-
-  <!-- jQery -->
-  <script  src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-  <!-- bootstrap js -->
-  <script  src="{% static 'js/bootstrap.js' %}"></script>
-  <!-- slick slider -->
-  <script  src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
-  <!-- custom js -->
-  <script  src=" {% static 'js/custom.js' %}"></script>
-  <!-- Google Map -->
-  <!-- End Google Map -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5572126897722470"
-     crossorigin="anonymous"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<script type="text/javascript" src="https://s.skimresources.com/js/196032X1673791.skimlinks.js"></script>
-</body>
-
+      <!-- jQery -->
+      <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+      <!-- bootstrap js -->
+      <script src="{% static 'js/bootstrap.js' %}"></script>
+      <!-- slick slider -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+      <!-- custom js -->
+      <script src=" {% static 'js/custom.js' %}"></script>
+      <!-- Google Map -->
+      <!-- End Google Map -->
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5572126897722470"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <script
+        type="text/javascript"
+        src="https://s.skimresources.com/js/196032X1673791.skimlinks.js"
+      ></script>
+    </body>
+  </head>
 </html>

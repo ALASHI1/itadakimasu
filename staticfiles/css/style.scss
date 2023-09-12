@@ -3,6 +3,7 @@ $black: #000000;
 $primary1: #46200b;
 $primary2: #a04120;
 $textCol: #6c6c6c;
+$page-type: index;
 
 @mixin main-font {
   font-family: "Poppins", sans-serif;
@@ -113,10 +114,15 @@ a:focus {
 /*header section*/
 
 .hero_area {
-  height: calc(100vh - 45px);
+  // height: calc(100vh - 45px);
   display: flex;
   flex-direction: column;
   position: relative;
+  @if $page-type == index {
+    height: calc(100vh - 45px);
+} @else {
+    height: 100%;
+}
 }
 
 .sub_page {

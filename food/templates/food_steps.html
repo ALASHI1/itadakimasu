@@ -1,18 +1,13 @@
-{% extends 'index.html' %}
-{% load static %}
-{% block title %}Wines{% endblock %}
+{% extends 'index.html' %} {% load static %} {% block title %}Wines{% endblock%}
 {% block content %}
 
 <style type="text/css">
-    .card:hover {
-        border-color: #ffec99;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
-
-    }
+  .card:hover {
+    border-color: #ffec99;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+  }
 </style>
-
-
 
 <!-- 
     {% for i in data.recommendedWines %}
@@ -34,29 +29,36 @@
   {% endfor %}
 </div> -->
 
-
 <div class="main_body_content">
-{% for i in data.recommendedWines %}
+  {% for i in data.recommendedWines %}
 
-<div style="padding-left:60px;" class="row row-cols-1 g-2">
-<div class="row-cols-1 card mb-3" style="width:80%;">
-  <a href="{{i.link}}">
-  <div class="row row-cols-1 g-0">
-    <div class="col-md-4">
-      <img src="{{i.imageUrl}}" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{i.title}}</h5>
-        <p class="card-text">{{i.description}}</p>
-        <p class="card-text"><small class="text-muted">valued at {{ i.price}}</small></p>
-      </div>
+  <div style="padding-left: 60px" class="row row-cols-1 g-2">
+    <div class="row-cols-1 card mb-3" style="width: 80%">
+      <a href="{{i.link}}">
+        <div class="row row-cols-1 g-0">
+          <div class="col-md-4">
+            <img
+              src="{{i.imageUrl}}"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{i.title}}</h5>
+              <p class="card-text">{{i.description}}</p>
+              <p class="card-text">
+                <small class="text-muted"
+                  >valued at {{ i.price|truncatechars:6 }}
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
-</a>
-</div>
-</div>
 
- {% endfor %}
+  {% endfor %}
 </div>
- {% endblock %} 
+{% endblock %}
